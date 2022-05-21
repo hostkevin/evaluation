@@ -131,7 +131,12 @@ function voirlesdetails(){
 
 
 
-
+function recherche(){
+  $recherche=$this->input->post('recherche');
+  $this->load->model('Backoffice_model');
+  $data=array('recherche'=>$this->Backoffice_model->voiture_recherche($recherche)); 
+  $this->load->view('frontoffice/Recherche_view',$data);
+}
 
 
 

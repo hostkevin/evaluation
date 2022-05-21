@@ -73,13 +73,14 @@
                         <!-- SEARCH BAR -->
                         <div class="col-md-6">
                             <div class="header-search">
-                                <form>
-                                    <select class="input-select">
-                                        <option value="0">All Categories</option>
-                                        <option value="1">Category 01</option>
-                                        <option value="1">Category 02</option>
+                                <form action="<?php echo site_url() ?>/frontofficeController/Front/recherche" method="post">
+                                    <select name="Category" class="input-select">
+                                           <?php foreach($voiture_type->result() as $type) { ?>
+                                        <option ><?php echo $type->type ?></option>
+                                        
+                                      <?php } ?>
                                     </select>
-                                    <input class="input" placeholder="Search here">
+                                    <input class="input" placeholder="Search here" name="recherche">
                                     <button class="search-btn">Search</button>
                                 </form>
                             </div>
@@ -170,10 +171,11 @@
                 <div id="responsive-nav">
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
-                        <li class="active"><a href="<?php echo site_url(); ?>/frontofficeController/Front/index">Home</a></li>
+                        <li class="active"><a href="#">Home</a></li>
                         <li><a href="<?php echo site_url(); ?>/frontofficeController/Front/trajet_view">Trajet</a></li>
                         <li><a href="<?php echo site_url(); ?>/Echeance/index">Echeance</a></li>
                           <li><a href="<?php echo site_url(); ?>/LoginController/Login/deconnexion_utilisateur">Deconnexion</a></li>
+                          <li><a href="<?php echo site_url(); ?>/frontofficeController/Garage/index">Garage</a></li>
                     </ul>
                     <!-- /NAV -->
                 </div>
@@ -182,23 +184,51 @@
             <!-- /container -->
         </nav>
         <!-- /NAVIGATION -->
-
-        <!-- SECTION -->
-        <div class="section">
+          <div class="section">
             <!-- container -->
             <div class="container">
                 <!-- row -->
                 <div class="row">
                     <!-- shop -->
                     <div class="col-md-4 col-xs-6">
-                       
-                                <img src="<?php echo base_url() ?>upload/img/clio5.jpg "  style="width: 300px height :300px"alt="">
+                        <div class="shop">
+                            <div class="shop-img">
+                                <img src="<?php echo base_url() ?>upload/img/c4.jpg" alt="">
                             </div>
-                    
+                            <div class="shop-body">
+                                <h3>Vehicule<br>Collection</h3>
+                                <a href="#" class="cta-btn"> <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
                     <!-- /shop -->
 
                     <!-- shop -->
-                  
+                    <div class="col-md-4 col-xs-6">
+                        <div class="shop">
+                            <div class="shop-img">
+                                <img src="<?php echo base_url() ?>upload/img/clio5.jpg" alt="">
+                            </div>
+                            <div class="shop-body">
+                               <h3>Vehicule<br>Collection</h3>
+                                <a href="#" class="cta-btn"><i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /shop -->
+
+                    <!-- shop -->
+                    <div class="col-md-4 col-xs-6">
+                        <div class="shop">
+                            <div class="shop-img">
+                                <img src="<?php echo base_url() ?>upload/img/x2.jpg" alt="">
+                            </div>
+                            <div class="shop-body">
+                               <h3>Vehicule<br>Collection</h3>
+                                <a href="#" class="cta-btn"> <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
                     <!-- /shop -->
                 </div>
                 <!-- /row -->
@@ -206,56 +236,29 @@
             <!-- /container -->
         </div>
         <!-- /SECTION -->
-
         <!-- SECTION -->
-        <div class="section">
+       <div class="section">
             <!-- container -->
             <div class="container">
                 <!-- row -->
                 <div class="row">
-
-                    <!-- section title -->
-                    <div class="col-md-12">
+          <div class="col-md-12">
                         <div class="section-title">
-                            <h3 class="title"> Carnet de bord</h3>
+                            <h3 class="title">Vehicule</h3>
                             
                         </div>
                     </div>
-                    <!-- /section title -->
-
-                    <!-- Products tab & slick -->
                    
-                </div>
-                <!-- /row -->
-            </div>
-            <!-- /container -->
-        </div>
-        <!-- /SECTION -->
-
-        <!-- HOT DEAL SECTION -->
-        
-        <!-- /HOT DEAL SECTION -->
-
-        <!-- SECTION -->
-        <div class="section">
-            <!-- container -->
-            <div class="container">
-                <!-- row -->
-                <div class="row">
-
-                    <!-- section title -->
-                   
-                    <!-- /section title -->
 
                     <!-- Products tab & slick -->
                     <div class="col-md-12">
                         <div class="row">
                             <div class="products-tabs">
                                 <!-- tab -->
-                                
+                                <div id="tab1" class="tab-pane active">
+                                   <div class="products-slick" data-nav="#slick-nav-1">
                                         <!-- product -->
-                          
-                                          <?php foreach($id->result() as $produit) { ?>
+                                        <?php foreach($recherche->result() as $produit) { ?>
                                         <div class="product">
                                             <div class="product-img">
                                                 <img src="<?php echo base_url() ?>upload/img/<?php echo $produit->image ?>" alt="">
@@ -265,11 +268,9 @@
                                                 </div>
                                             </div>
                                             <div class="product-body">
-                                                <p class="product-category">Type:<?php echo $produit->type ?></p>
-                                                <h3 class="product-name"><a href="#">Modele: <?php echo $produit->modele ?></a></h3>
-                                                <h4 class="product-price"><span class="qty">Marque: <?php echo $produit->marque ?></h3>
-                                                <a href="<?php echo site_url() ?>/frontofficeController/Trajet_pdf/pdf?voiture=<?php echo $produit->modele ?>"><p class="product-category">Trajet du vehicule</p></a>
-                                            
+                                                <p class="product-category">Modele <?php echo $produit->modele ?></p>
+        
+                                                <h4 class="product-category">Type : <?php echo $produit->type ?> </h4>
                                                 <div class="product-rating">
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
@@ -278,58 +279,78 @@
                                                     <i class="fa fa-star"></i>
                                                 </div>
                                               
-                                            </span>
-                                        </h4>
-                                    </div>
-                                
                                             </div>
-                                           
-                                        </div>
-                                       
-                                        <?php } ?><!-- /product -->
-                                        
-                                        
-                          
-
-
-                                          <?php foreach($voiture->result() as $echeance) { ?>
-                                        <div class="product">
-                                            
-                                            <div class="product-body">
-                                                <p class="product-category">Echeance</p>
-                                                <p class="product-category">Voiture: <?php echo $echeance->voiture ?></p>
-                                                 <p class="product-category">Maitenance: <?php echo $echeance->voiture ?></p>
-                                                <h3 class="product-name"><a href="#">durrer de l'echeance: <?php echo $echeance->nbjours ?> jours</a></h3>
-                                                <h3 class="product-name"><span class="qty">Date de debut: <?php echo $echeance->date_debut ?> </h3></span>
-                                                <h3 class="product-name"><span class="qty">Date de fin: <?php echo $echeance->date_expirer ?> </h3></span>
-                                                <h3 class="product-price"><span class="qty">type de l'echeance: <?php echo $echeance->type ?> </h3></span>
-                                                
-                                              
+                                            <div class="add-to-cart">
+                                                <a href="<?php echo site_url() ?>/frontofficeController/Front/voirlesdetails?id=<?php echo $produit->id ?>&voiture=<?php echo $produit->modele ?>"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> voir les options</button></a>
                                             </div>
-                                           
                                         </div>
-                                        <!-- /product -->
                                         <?php } ?>
-                                                     
-                           
-
                                         <!-- /product -->
+
+                                     
                                     </div>
-                              
-                           
+                                    <div id="slick-nav-1" class="products-slick-nav"></div>
+                                </div>
+                                <!-- /tab -->
+                            </div>
                         </div>
                     </div>
-                    <!-- /Products tab & slick -->
+                    <!-- Products tab & slick -->
                 </div>
                 <!-- /row -->
             </div>
             <!-- /container -->
         </div>
         <!-- /SECTION -->
-       
-        
 
+        <!-- HOT DEAL SECTION -->
+       
+        <!-- /HOT DEAL SECTION -->
+
+        <!-- SECTION -->
         
+                <!-- row -->
+        <!-- /SECTION -->
+
+        <!-- SECTION -->
+      
+        <!-- /SECTION -->
+
+        <!-- NEWSLETTER -->
+        <div id="newsletter" class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="newsletter">
+                            <p>Sign Up for the <strong>NEWSLETTER</strong></p>
+                            <form>
+                                <input class="input" type="email" placeholder="Enter Your Email">
+                                <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+                            </form>
+                            <ul class="newsletter-follow">
+                                <li>
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /NEWSLETTER -->
 
         <!-- FOOTER -->
         <footer id="footer">

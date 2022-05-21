@@ -31,5 +31,26 @@ function allVoitureDisponible($disponibiliter){
     $query=$this->db->get();
     return $query;
 }
+
+function voiture_category(){
+$query=$this->db->query("SELECT Min(id) As id,type from voiture GROUP BY type");
+return $query;
 }
+function voiture_recherche($recherche)
+{
+ $this->db->select('*');
+    $this->db->from('voiture');
+    $this->db->like('modele', $recherche);
+    $this->db->Order_by('modele DESC');
+    $query = $this->db->get();
+
+    if($query->num_rows() > 0) {
+        return $query;
+    }
+    }
+}
+
+
+
+
 ?>
