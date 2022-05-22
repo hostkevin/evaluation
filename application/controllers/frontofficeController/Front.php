@@ -11,7 +11,9 @@ class Front extends CI_Controller{
 
  function index(){
  	$this->load->model('Backoffice_model');
-  $data=array('voiture'=>$this->Backoffice_model-> allVoiture(),'voiture_type'=>$this->Backoffice_model->voiture_category());
+  $data=array('voiture'=>$this->Backoffice_model-> allVoiture()
+    ,'voiture_type'=>$this->Backoffice_model->voiture_category()
+    ,'utilisateur'=>$this->session->userdata('login'));
   $this->load->view('frontoffice/Front',$data);
  }
 function voiture(){
@@ -138,6 +140,13 @@ function recherche(){
   $this->load->view('frontoffice/Recherche_view',$data);
 }
 
+
+
+function alltrajet(){
+  $this->load->model('Frontoffice_model');
+  $data=array( 'trajet'=>$this->Frontoffice_model->AllTrajet());
+   $this->load->view('frontoffice/All_trajet_view',$data);
+}
 
 
 

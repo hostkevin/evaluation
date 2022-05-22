@@ -43,7 +43,7 @@
                 <div class="container">
                     <ul class="header-links pull-left">
                         <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-                        <li><a href="#"><i class="fa fa-envelope-o"></i><?php echo $utilisateur ?></a></li>
+                        <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
                         <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
                     </ul>
                     <ul class="header-links pull-right">
@@ -73,14 +73,13 @@
                         <!-- SEARCH BAR -->
                         <div class="col-md-6">
                             <div class="header-search">
-                                <form action="<?php echo site_url() ?>/frontofficeController/Front/recherche" method="post">
-                                    <select name="Category" class="input-select">
-                                           <?php foreach($voiture_type->result() as $type) { ?>
-                                        <option ><?php echo $type->type ?></option>
-                                        
-                                      <?php } ?>
+                                <form>
+                                    <select class="input-select">
+                                        <option value="0">All Categories</option>
+                                        <option value="1">Category 01</option>
+                                        <option value="1">Category 02</option>
                                     </select>
-                                    <input class="input" placeholder="Search here" name="recherche">
+                                    <input class="input" placeholder="Search here">
                                     <button class="search-btn">Search</button>
                                 </form>
                             </div>
@@ -171,12 +170,10 @@
                 <div id="responsive-nav">
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="<?php echo site_url(); ?>/frontofficeController/Front/trajet_view">Inserer un trajet</a></li>
-                        <li><a href="<?php echo site_url(); ?>/Echeance/index">Inserer une Echeance</a></li>
+                        <li class="active"><a href="<?php echo site_url(); ?>/frontofficeController/Front/index">Home</a></li>
+                        <li><a href="<?php echo site_url(); ?>/frontofficeController/Front/trajet_view">Trajet</a></li>
+                        <li><a href="<?php echo site_url(); ?>/Echeance/index">Echeance</a></li>
                           <li><a href="<?php echo site_url(); ?>/LoginController/Login/deconnexion_utilisateur">Deconnexion</a></li>
-                          <li><a href="<?php echo site_url(); ?>/frontofficeController/Garage/index">Garage</a></li>
-                           <li><a href="<?php echo site_url(); ?>/frontofficeController/Front/alltrajet"> trajet des vehicules</a></li>
                     </ul>
                     <!-- /NAV -->
                 </div>
@@ -185,7 +182,9 @@
             <!-- /container -->
         </nav>
         <!-- /NAVIGATION -->
-          <div class="section">
+
+        <!-- SECTION -->
+       <div class="section">
             <!-- container -->
             <div class="container">
                 <!-- row -->
@@ -237,66 +236,25 @@
             <!-- /container -->
         </div>
         <!-- /SECTION -->
+
         <!-- SECTION -->
-       <div class="section">
+        <div class="section">
             <!-- container -->
             <div class="container">
                 <!-- row -->
                 <div class="row">
-          <div class="col-md-12">
+
+                    <!-- section title -->
+                    <div class="col-md-12">
                         <div class="section-title">
-                            <h3 class="title">Vehicule</h3>
+                            <h3 class="title"> Tous les trajet des vehicule</h3>
                             
                         </div>
                     </div>
+                    <!-- /section title -->
+
+                    <!-- Products tab & slick -->
                    
-
-                    <!-- Products tab & slick -->
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="products-tabs">
-                                <!-- tab -->
-                                <div id="tab1" class="tab-pane active">
-                                   <div class="products-slick" data-nav="#slick-nav-1">
-                                        <!-- product -->
-                                        <?php foreach($voiture->result() as $produit) { ?>
-                                        <div class="product">
-                                            <div class="product-img">
-                                                <img src="<?php echo base_url() ?>upload/img/<?php echo $produit->image ?>" alt="">
-                                                <div class="product-label">
-                                                    <span class="sale">-30%</span>
-                                                    <span class="new">NEW</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-body">
-                                                <p class="product-category">Modele <?php echo $produit->modele ?></p>
-        
-                                                <h4 class="product-category">Type : <?php echo $produit->type ?> </h4>
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                              
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a href="<?php echo site_url() ?>/frontofficeController/Front/voirlesdetails?id=<?php echo $produit->id ?>&voiture=<?php echo $produit->modele ?>"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> voir les options</button></a>
-                                            </div>
-                                        </div>
-                                        <?php } ?>
-                                        <!-- /product -->
-
-                                     
-                                    </div>
-                                    <div id="slick-nav-1" class="products-slick-nav"></div>
-                                </div>
-                                <!-- /tab -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Products tab & slick -->
                 </div>
                 <!-- /row -->
             </div>
@@ -305,53 +263,82 @@
         <!-- /SECTION -->
 
         <!-- HOT DEAL SECTION -->
-       
+        
         <!-- /HOT DEAL SECTION -->
 
         <!-- SECTION -->
-        
-                <!-- row -->
-        <!-- /SECTION -->
-
-        <!-- SECTION -->
-      
-        <!-- /SECTION -->
-
-        <!-- NEWSLETTER -->
-        <div id="newsletter" class="section">
+        <div class="section">
             <!-- container -->
             <div class="container">
                 <!-- row -->
                 <div class="row">
+
+                    <!-- section title -->
+                   
+                    <!-- /section title -->
+
+                    <!-- Products tab & slick -->
                     <div class="col-md-12">
-                        <div class="newsletter">
-                             <strong>S'INSCRIRE</strong></p>
-                            <form action="<?php echo site_url() ?>/RegisterController/Register/index">
-                               
-                                <button class="newsletter-btn"><i class="fa fa-envelope"></i> S'inscrire</button>
-                            </form>
-                            <ul class="newsletter-follow">
-                                <li>
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                </li>
-                            </ul>
+                        <div class="row">
+                            <div class="products-tabs">
+                                <!-- tab -->
+                                
+                                        <!-- product -->
+                          
+                                          <?php foreach($trajet->result() as $voiture) { ?>
+                                        <div class="product">
+                                            <div class="product-body">
+                                                <p class="product-category">Modele:<?php echo $voiture->voiture ?></p>
+                                                <h3 class="product-name"><a href="#">Date de Depart : <?php echo $voiture->date_depart_heure ?></a></h3>
+                                                <h4 class="product-category"><span class="qty">Kilometrage de depart: <?php echo $voiture->kilometrage_depart ?></h3>
+                                                 <p class="product-category">Lieu de depart :<?php echo $voiture->lieu_depart ?></p>
+                                                 <p class="product-category">Date d'arriver :<?php echo $voiture->date_arriver_heure  ?></p>
+                                                  <h4 class="product-category"><span class="qty">Kilometrage d'arriver: <?php echo $voiture->kilometrage_arriver ?></h3>
+                                                  <p class="product-category">Lieu d'arriver :<?php echo $voiture->lieu_arriver ?></p>
+                                                   <h3 class="product-price"><a href="#">Distance parcourue: <?php echo $voiture->distance_parcourue_km ?>km</a></h3>
+                                                   <h3 class="product-price"><a href="#">Vitesse moyenne: <?php echo $voiture->vitesse_moyenne ?>km/h</a></h3>
+                                                <div class="product-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                              
+                                            </span>
+                                        </h4>
+                                    </div>
+                                
+                                            </div>
+                                           
+                                        </div>
+                                       
+                                        <?php } ?><!-- /product -->
+                                        
+                                        
+                          
+
+
+                                                     
+                           
+
+                                        <!-- /product -->
+                                    </div>
+                              
+                           
                         </div>
                     </div>
+                    <!-- /Products tab & slick -->
                 </div>
                 <!-- /row -->
             </div>
             <!-- /container -->
         </div>
-        <!-- /NEWSLETTER -->
+        <!-- /SECTION -->
+       
+        
+
+        
 
         <!-- FOOTER -->
         <footer id="footer">

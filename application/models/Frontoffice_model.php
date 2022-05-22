@@ -45,6 +45,8 @@ function trajet_voiture($voiture){
     return $query;
 }
 
-
+function AllTrajet(){
+    return $this->db->get('trajet');
+}
 }
 ?>
