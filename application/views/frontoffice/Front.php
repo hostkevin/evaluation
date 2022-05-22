@@ -282,7 +282,7 @@
                                               
                                             </div>
                                             <div class="add-to-cart">
-                                                <a href="<?php echo site_url() ?>/frontofficeController/Front/voirlesdetails?id=<?php echo $produit->id ?>&voiture=<?php echo $produit->modele ?>"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> voir les options</button></a>
+                                                <a href="<?php echo site_url() ?>/frontofficeController/Front/voirlesdetails?id=<?php echo $produit->id ?>&voiture=<?php echo $produit->modele ?>"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Informations </button></a>
                                             </div>
                                         </div>
                                         <?php } ?>

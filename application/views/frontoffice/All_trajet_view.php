@@ -292,18 +292,12 @@
                                                 <h3 class="product-name"><a href="#">Date de Depart : <?php echo $voiture->date_depart_heure ?></a></h3>
                                                 <h4 class="product-category"><span class="qty">Kilometrage de depart: <?php echo $voiture->kilometrage_depart ?></h3>
                                                  <p class="product-category">Lieu de depart :<?php echo $voiture->lieu_depart ?></p>
-                                                 <p class="product-category">Date d'arriver :<?php echo $voiture->date_arriver_heure  ?></p>
+                                                 <p class="product-name">Date d'arriver :<?php echo $voiture->date_arriver_heure  ?></p>
                                                   <h4 class="product-category"><span class="qty">Kilometrage d'arriver: <?php echo $voiture->kilometrage_arriver ?></h3>
                                                   <p class="product-category">Lieu d'arriver :<?php echo $voiture->lieu_arriver ?></p>
                                                    <h3 class="product-price"><a href="#">Distance parcourue: <?php echo $voiture->distance_parcourue_km ?>km</a></h3>
                                                    <h3 class="product-price"><a href="#">Vitesse moyenne: <?php echo $voiture->vitesse_moyenne ?>km/h</a></h3>
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
+                                               
                                               
                                             </span>
                                         </h4>
