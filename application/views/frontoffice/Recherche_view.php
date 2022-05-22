@@ -43,7 +43,7 @@
                 <div class="container">
                     <ul class="header-links pull-left">
                         <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-                        <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+                        <li><a href="#"><i class="fa fa-envelope-o"></i><?php echo $login ?></a></li>
                         <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
                     </ul>
                     <ul class="header-links pull-right">
@@ -91,13 +91,7 @@
                         <div class="col-md-3 clearfix">
                             <div class="header-ctn">
                                 <!-- Wishlist -->
-                                <div>
-                                    <a href="#">
-                                        <i class="fa fa-heart-o"></i>
-                                        <span>Your Wishlist</span>
-                                        <div class="qty">2</div>
-                                    </a>
-                                </div>
+                               
                                 <!-- /Wishlist -->
 
                                 <!-- Cart -->
@@ -171,11 +165,12 @@
                 <div id="responsive-nav">
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
+                        <li class="active"><a href="<?php echo site_url(); ?>/frontofficeController/Front/index">Home</a></li>
                         <li><a href="<?php echo site_url(); ?>/frontofficeController/Front/trajet_view">Trajet</a></li>
                         <li><a href="<?php echo site_url(); ?>/Echeance/index">Echeance</a></li>
                           <li><a href="<?php echo site_url(); ?>/LoginController/Login/deconnexion_utilisateur">Deconnexion</a></li>
                           <li><a href="<?php echo site_url(); ?>/frontofficeController/Garage/index">Garage</a></li>
+                          
                     </ul>
                     <!-- /NAV -->
                 </div>

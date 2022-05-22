@@ -39,34 +39,39 @@
 
 					<div class="wrap-input100 validate-input m-b-23" >
 						<span class="label-input100">Nom</span>
-						<input class="input100" type="text" placeholder="Votre Nom" name="nom">
+						<input class="input100" type="text" placeholder="Votre Nom" name="nom" required>
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 
 					 	<div class="wrap-input100 validate-input m-b-23" >
 						<span class="label-input100">prenom</span>
-						<input class="input100" type="text"  placeholder="Votre Prenom" name="prenom">
+						<input class="input100" type="text"  placeholder="Votre Prenom" name="prenom" required>
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 
                     	<div class="wrap-input100 validate-input m-b-23" >
 						<span class="label-input100">Login</span>
-						<input class="input100" type="text"  placeholder="Votre login" name="login">
+						<input class="input100" type="text"  placeholder="Votre login" name="login" required>
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" >
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="mdp" placeholder="Votre mot de passe">
+						<input class="input100" type="password" name="mdp" placeholder="Votre mot de passe" required>
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
-			     <div class="text-right p-t-8 p-b-31">
-						<a href="#">
-						
-						</a>
+			         	<div class="wrap-input100 validate-input m-b-23" >
+						<span class="label-input100">email</span>
+						<input class="input100" type="email"  placeholder="Votre Email" name="email" required>
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
-					
-					<div class="container-login100-form-btn">
+						
+							<div class="wrap-input100 validate-input m-b-23" >
+						<span class="label-input100">votre numero de telephone</span>
+						<input class="input100" type="text"  placeholder="Votre numero" name="numero" required>
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn">
@@ -101,10 +106,18 @@
  
 				<?php } ?>
 
-						<a href="<?php echo site_url(); ?>/LoginController/Login/index" class="txt2">
+						
+							</div>
+			         	  <div class="flex-col-c p-t-155">
+                           <a href="<?php echo site_url(); ?>/LoginController/Login/index" class="txt2">
 							Se Connecter
 						</a>
 					 
+                          </div>
+						</a>
+					</div>
+					
+					
 					</div>
 				
 				</form>

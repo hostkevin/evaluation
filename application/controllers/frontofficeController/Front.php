@@ -11,7 +11,7 @@ class Front extends CI_Controller{
 
  function index(){
  	$this->load->model('Backoffice_model');
-  $data['voiture']=$this->Backoffice_model-> allVoiture();
+  $data=array('voiture'=>$this->Backoffice_model-> allVoiture(),'voiture_type'=>$this->Backoffice_model->voiture_category());
   $this->load->view('frontoffice/Front',$data);
  }
 function voiture(){

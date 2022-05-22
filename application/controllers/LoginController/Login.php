@@ -35,8 +35,9 @@ class Login extends CI_Controller{
       {
   
          $this->load->model('Backoffice_model');
-        $produit=array('voiture'=>$this->Backoffice_model->allVoiture(),'voiture_type'=>$this->Backoffice_model->voiture_category());
-         $this->session->set_userdata('login',$data['login']);  
+        $this->session->set_userdata('login',$data['login']);  
+        $produit=array('voiture'=>$this->Backoffice_model->allVoiture(),'voiture_type'=>$this->Backoffice_model->voiture_category(),'utilisateur'=>$this->session->userdata('login'));
+         
          $this->front($produit,$this->session->userdata('login'));
        }
 

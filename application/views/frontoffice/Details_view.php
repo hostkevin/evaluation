@@ -184,21 +184,51 @@
         <!-- /NAVIGATION -->
 
         <!-- SECTION -->
-        <div class="section">
+       <div class="section">
             <!-- container -->
             <div class="container">
                 <!-- row -->
                 <div class="row">
                     <!-- shop -->
                     <div class="col-md-4 col-xs-6">
-                       
-                                <img src="<?php echo base_url() ?>upload/img/clio5.jpg "  style="width: 300px height :300px"alt="">
+                        <div class="shop">
+                            <div class="shop-img">
+                                <img src="<?php echo base_url() ?>upload/img/c4.jpg" alt="">
                             </div>
-                    
+                            <div class="shop-body">
+                                <h3>Vehicule<br>Collection</h3>
+                                <a href="#" class="cta-btn"> <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
                     <!-- /shop -->
 
                     <!-- shop -->
-                  
+                    <div class="col-md-4 col-xs-6">
+                        <div class="shop">
+                            <div class="shop-img">
+                                <img src="<?php echo base_url() ?>upload/img/clio5.jpg" alt="">
+                            </div>
+                            <div class="shop-body">
+                               <h3>Vehicule<br>Collection</h3>
+                                <a href="#" class="cta-btn"><i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /shop -->
+
+                    <!-- shop -->
+                    <div class="col-md-4 col-xs-6">
+                        <div class="shop">
+                            <div class="shop-img">
+                                <img src="<?php echo base_url() ?>upload/img/x2.jpg" alt="">
+                            </div>
+                            <div class="shop-body">
+                               <h3>Vehicule<br>Collection</h3>
+                                <a href="#" class="cta-btn"> <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
                     <!-- /shop -->
                 </div>
                 <!-- /row -->

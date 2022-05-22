@@ -43,7 +43,7 @@
                 <div class="container">
                     <ul class="header-links pull-left">
                         <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-                        <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+                        <li><a href="#"><i class="fa fa-envelope-o"></i><?php echo $utilisateur ?></a></li>
                         <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
                     </ul>
                     <ul class="header-links pull-right">
@@ -324,10 +324,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="newsletter">
-                            <p>Sign Up for the <strong>NEWSLETTER</strong></p>
-                            <form>
-                                <input class="input" type="email" placeholder="Enter Your Email">
-                                <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+                             <strong>S'INSCRIRE</strong></p>
+                            <form action="<?php echo site_url() ?>/RegisterController/Register/index">
+                               
+                                <button class="newsletter-btn"><i class="fa fa-envelope"></i> S'inscrire</button>
                             </form>
                             <ul class="newsletter-follow">
                                 <li>

@@ -14,23 +14,21 @@ class Register extends CI_Controller{
 
  function register(){
  	if($_SERVER['REQUEST_METHOD']=='POST'){
- 		$this->form_validation->set_rules('nom','User Name','required');
- 	    $this->form_validation->set_rules('prenom','Prenom','required');
- 	    $this->form_validation->set_rules('login','Login','required');   
- 	    $this->form_validation->set_rules('mdp','Password','required');   
- 	
-       if($this->form_validation->run()==TRUE){
+ 		
        	 $nom=$this->input->post('nom');
          $prenom=$this->input->post('prenom');
          $login=$this->input->post('login');
          $mdp=$this->input->post('mdp');
-       
+         $email=$this->input->post('email');
+         $numero=$this->input->post('numero');
+         
           $data=array(
               'nom'=>$nom,
               'prenom'=>$prenom,
               'login'=>$login,
-              'mdp'=>$mdp
-            
+              'mdp'=>$mdp,
+              'email'=>$email,
+               'numero'=>$numero
 
           );
       
@@ -45,5 +43,5 @@ class Register extends CI_Controller{
  }
 
 
-}
+
 ?>
