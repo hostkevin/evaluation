@@ -75,7 +75,7 @@
                             <div class="header-search">
                                 <form action="<?php echo site_url() ?>/frontofficeController/Front/recherche" method="post">
                                     <select name="Category" class="input-select">
-                                           <?php foreach($voiture_type->result() as $type) { ?>
+                                           <?php foreach($type->result() as $type) { ?>
                                         <option ><?php echo $type->type ?></option>
                                         
                                       <?php } ?>
@@ -258,7 +258,7 @@
                                 <div id="tab1" class="tab-pane active">
                                    <div class="products-slick" data-nav="#slick-nav-1">
                                         <!-- product -->
-                                        <?php foreach($recherche->result() as $produit) { ?>
+                                        <?php foreach($search->result() as $produit) { ?>
                                         <div class="product">
                                             <div class="product-img">
                                                 <img src="<?php echo base_url() ?>upload/img/<?php echo $produit->image ?>" alt="">
